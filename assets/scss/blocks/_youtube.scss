@@ -1,0 +1,44 @@
+.youtube {
+    margin: 32px auto;
+    text-align: center;
+    width: $w-80;
+    border-radius: 16px;
+    animation-name: paragraph;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+    &__paragraph {
+        text-align: center;
+        padding: 2rem 2rem;
+        font-size: 0.8rem;
+    }
+}
+
+@keyframes paragraph {
+    from {
+
+        border: 5px solid transparent;
+    }
+
+    to {
+        border: 5px solid $font-color;
+    }
+}
+
+
+.bestchannel {
+    text-align: center;
+    border: 1px solid $font-color;
+    border-radius: 4rem;
+    width: $w-80;
+    margin: 5rem auto 2rem  ;
+}
+
+
+@media screen and (min-width:768px) {
+    .youtube{
+        display: none;
+    }
+}
+

@@ -1,0 +1,100 @@
+.description {
+    margin-top: 2rem;
+    background-image: linear-gradient(180deg, #22222277 50%, transparent);
+    height: 200px;
+    @include displayFlex (space-between, center);
+
+    &__image {
+        height: 100%;
+        width: 50%;
+        filter: drop-shadow(2px 4px 6px black);
+        filter: hue-rotate(250deg);
+    }
+
+    &__title {
+        height: 100%;
+        width: 50%;
+        @include displayFlex(center, center);
+        animation-name: youtube;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+
+        &__button {
+            border: 0.3rem solid white;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 0.5rem;
+        }
+
+
+    }
+
+    &__text {
+        display: none;
+    }
+}
+
+
+@keyframes youtube {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .description {
+        margin: 6rem auto 4rem;
+        height: 150px;
+        width: $w-80;
+        background-color: $bg--secondary;
+
+        &__image {
+            display: none;
+        }
+
+        &__title {
+            display: none;
+
+            &__button {
+                display: none;
+            }
+        }
+
+        &__text {
+            display: block;
+            text-align: center;
+            margin: auto;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            background-color: white;
+            padding: 0.5rem;
+            animation-name: text;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+    }
+
+}
+
+
+@keyframes text {
+
+    from {
+        background-color: transparent;
+        opacity: 0.5;
+    }
+
+    to {
+        background-color: $bg--secondary;
+        opacity: 1;
+    }
+
+
+}

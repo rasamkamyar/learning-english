@@ -1,0 +1,83 @@
+.slideshow {
+    @include displayFlex(flex-start, center);
+    overflow-x: scroll;
+    margin: 3rem 0 2rem;
+
+    &__items {
+        width: 200px;
+        height: 300px;
+        margin-right: 1rem;
+        @include displayFlex(space-between, center);
+        flex-direction: column;
+        backdrop-filter: blur(5px);
+        background-color: $bg--secondary;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+
+        &:first-child {
+            margin-left: 1rem;
+        }
+
+        &__image {
+            border-top-left-radius: 2rem;
+            width: 200px;
+            height: 200px;
+        }
+
+        &__button {
+            margin-bottom: 2rem;
+            border: 0.2rem solid white;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.5rem;
+        }
+    }
+
+}
+
+@media screen and (min-width:768px) {
+    .slideshow {
+        @include displayFlex(flex-start, center);
+        overflow-x: scroll;
+        margin: 3rem 0 0;
+
+        &__items {
+            flex-shrink: 0;
+            width: 400px;
+            height: 500px;
+            margin-right: 1rem;
+            @include displayFlex(space-between, center);
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            background-color: $bg--secondary;
+            border-bottom-right-radius: 2rem;
+            border-top-left-radius: 2rem;
+
+            &:first-child {
+                margin-left: 1rem;
+            }
+
+            &__image {
+                margin-top: 2rem;
+                border-top-left-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                width: $w-80;
+                height: 300px;
+                transition: 1s;
+            }
+
+            &__button {
+                margin-bottom: 2rem;
+                border: 0.2rem solid white;
+                padding: 0.8rem;
+                border-radius: 1rem;
+                font-size: 0.5rem;
+            }
+        }
+
+        .slideshow__items:hover img{
+            transform: scale(1.1);
+        }
+    }
+
+}

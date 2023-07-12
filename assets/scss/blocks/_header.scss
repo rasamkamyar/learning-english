@@ -1,0 +1,84 @@
+.header {
+    @include displayFlex (space-around, center);
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background-color: $bg--secondary;
+
+    &__navbar {
+
+        &__items {
+            display: none;
+        }
+
+        &__icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    }
+
+
+    &__title {
+
+        &__name {
+            text-shadow: 2px 2px 1px $bg--primary;
+            font-size: 1rem;
+        }
+
+        &__icon {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .header {
+        @include displayFlex (space-around, center);
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        position: fixed;
+        z-index: 1000;
+        top: 5px;
+        left: 15%;
+        border-radius: 32px;
+        backdrop-filter: blur(5px);
+        background-color: $bg--secondary;
+        height: 75px;
+
+        &__navbar {
+
+            &__items {
+                font-size: 1rem;
+                display: block;
+                padding: 2rem;
+
+                >a {
+                    padding-left: 2rem;
+                }
+            }
+
+            &__icon {
+                display: none;
+            }
+        }
+
+
+        &__title {
+            @include displayFlex(center, center);
+
+            &__name {
+                text-shadow: 2px 2px 1px $bg--primary;
+                font-size: 2rem;
+            }
+
+            &__icon {
+                display: block !important;
+                font-size: 3rem;
+            }
+        }
+    }
+}

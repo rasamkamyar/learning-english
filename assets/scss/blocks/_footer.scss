@@ -1,0 +1,116 @@
+footer {
+    background-color: $bg--secondary;
+    @include displayFlex (space-evenly, center);
+
+    .about {
+        padding: 8px;
+        font-size: 0.5rem;
+        position: sticky;
+        background-color: $bg--secondary;
+        bottom: 30px;
+        border-radius: 50px;
+        display: inline-block;
+        left: 10px;
+        animation-name: about;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+
+    }
+
+
+
+    .lfooter {
+        @include displayFlex(baseline, center);
+        font-size: 1rem;
+
+    }
+
+    .rfooter {
+        margin-right: 8px;
+
+        &__icons {
+            display: none;
+        }
+
+        &__list {
+            list-style: none;
+        }
+    }
+}
+
+
+@keyframes about {
+    from {
+
+        border: 2px solid transparent;
+    }
+
+    to {
+        border: 2px solid $font-color;
+    }
+}
+
+
+
+
+@media screen and (min-width:768px) {
+    footer {
+        color: #222222dd;
+        background-color: rgba(255, 255, 255, 0.8);
+        @include displayFlex (space-evenly, center);
+        height: 400px;
+        width: $w-80;
+        margin: 1rem auto;
+
+        .lfooter {
+            @include displayFlex(baseline, center);
+            font-size: 1rem;
+        }
+
+        .rfooter {
+            margin-right: 8px;
+
+            &__icons {
+
+                display: block;
+
+                &__image {
+                    width: 50px;
+                    height: 50px;
+                    padding: 8px;
+                }
+            }
+
+
+            &__list {
+                display: none;
+            }
+        }
+    }
+
+
+    .about {
+        padding: 0 8px;
+        font-size: 0.5rem;
+        position: sticky;
+        background-color: $bg--secondary;
+        border-radius: 50%;
+        animation-name: about;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        color: $font-color;
+    }
+}
+
+@keyframes about {
+    from {
+
+        border: 2px solid transparent;
+    }
+
+    to {
+        border: 2px solid $font-color;
+    }
+}

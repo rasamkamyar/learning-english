@@ -1,0 +1,127 @@
+    .animated-introduction {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+
+        &__title {
+            width: 90%;
+            font-size: 1rem;
+            font-weight: 900;
+            padding: 1rem 5rem;
+            margin: 1rem;
+            border: 4px solid $font-color;
+            border-radius: 4rem;
+            color: $font-color;
+            text-align: center;
+            animation-name: animated-introduction-title;
+            animation-duration: 2s;
+            animation-delay: 0.1s;
+            animation-timing-function: ease-out;
+        }
+
+        &__photo {
+            width: $w-80;
+            height: 150px;
+            border-radius: 3rem;
+            animation-name: animated-introduction;
+            animation-duration: 2s;
+            animation-delay: 0.1s;
+            animation-timing-function: ease-out;
+        }
+
+        &__down-arrow {
+            text-align: center;
+
+            i {
+                margin-top: 1.5rem;
+                font-size: 1.2rem;
+                cursor: pointer;
+                animation-name: arrows;
+                animation-duration: 0.5s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-out
+            }
+        }
+    }
+
+
+    @keyframes animated-introduction-title {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes animated-introduction {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes arrows {
+        from {
+            transform: translateY(5px);
+        }
+
+        to {
+            transform: translateY(-5px);
+            opacity: 0.2;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        .animated-introduction {
+            @include displayFlex (center, center);
+            flex-direction: column;
+            margin-top: 130px;
+            width: 90%;
+
+            &__title {
+                width: $w-80;
+                font-size: 3.5rem;
+                font-weight: 900;
+                margin:2rem 1rem 3rem;
+                align-self: self-start;
+                border: none;
+                color: $font-color;
+                animation-name: none;
+            }
+
+            &__photo {
+                width: 30%;
+                border-radius: 3rem;
+                animation-name: animated-introduction-desktop;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-out;
+                animation-direction: alternate;
+                align-self: flex-end;
+            }
+
+            &__down-arrow {
+                display: none;
+            }
+        }
+    }
+
+
+
+    @keyframes animated-introduction-desktop {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.3);
+        }
+    }
