@@ -1,6 +1,6 @@
 body {
     margin: 0 auto;
-    background-color: $bg--primary;
+    background-image: url(../images/tmob.jpg);
     color: $font-color;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -9,7 +9,6 @@ a {
     text-decoration: none;
     color: $font-color;
 }
-
 
 * {
     box-sizing: border-box;
