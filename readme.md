@@ -2,4 +2,4 @@
 ## Some Features
 ### 1-Mobile First
 ### 2-BEM Based 
-[BEM example](./BEM.png);
+[BEM example](./ReadMe/BEM.png)
